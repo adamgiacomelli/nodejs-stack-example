@@ -18,9 +18,13 @@
   },
   "ava": {
     "files": [
-      "tests/e2e/*.js",
-      "tests/unit/*.js",
-      "tests/integration/*.js"
+      "src/modules/**/tests/**/*.js",
+      "tests/**/*.js"
+    ]
+  },
+  "nyc": {
+    "exclude": [
+      "src/modules/**/tests/**/*.js"
     ]
   }
 }
