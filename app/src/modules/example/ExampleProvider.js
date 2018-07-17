@@ -16,6 +16,11 @@ async function getRoot(req, res, next) {
   }
 }
 
+async function getError(req, res, next) {
+  return next(new Error());
+}
+
 module.exports = {
-  getRoot
+  getRoot,
+  getError
 };

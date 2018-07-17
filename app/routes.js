@@ -12,13 +12,12 @@ module.exports = function routes(app) {
    */
   router.use("/example", ExampleController);
 
-  
   app.get("/api/v1", (req, res) =>
     res.status(200).send({ message: "API works." })
   );
 
-router.use(ResponseMiddleware);
-router.use(ErrorMiddleware);
+  router.use(ResponseMiddleware);
+  router.use(ErrorMiddleware);
 
   app.use(express.static("public"));
   app.use("/api/v1", router);

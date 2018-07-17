@@ -3,11 +3,24 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "NODE_ENV=development node server.js"
+    "start": "NODE_ENV=development node server.js",
+    "test": "nyc ava --verbose && nyc report --reporter=html"
   },
   "dependencies": {
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "winston": "^3.0.0"
+  },
+  "devDependencies": {
+    "ava": "1.0.0-beta.6",
+    "nyc": "^12.0.2",
+    "supertest": "^3.1.0"
+  },
+  "ava": {
+    "files": [
+      "tests/e2e/*.js",
+      "tests/unit/*.js",
+      "tests/integration/*.js"
+    ]
   }
 }

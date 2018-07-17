@@ -18,6 +18,10 @@ console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
 
 const server = http.createServer(app);
 
-server.listen(port, () =>
-  console.log(`Express server listening on port: ${port}`)
-);
+if (process.env.NODE_ENV !== "test") {
+  server.listen(port, () =>
+    console.log(`Express server listening on port: ${port}`)
+  );
+}
+
+module.exports = server;

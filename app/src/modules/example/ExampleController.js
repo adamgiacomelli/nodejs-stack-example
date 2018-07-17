@@ -5,6 +5,7 @@ const router = express.Router();
 
 module.exports = function vendorController() {
   router.get("/", ExampleProvider.getRoot);
+  router.get("/error", ExampleProvider.getError);
 
   return router;
 };
