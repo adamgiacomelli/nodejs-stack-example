@@ -4,13 +4,13 @@ const responseMiddleware = (req, res) => {
       data: res.data,
       message: {
         text: res.message.text,
-        status: res.message.status
-      }
+        status: res.message.status,
+      },
     });
   } else {
     res.status(404).send({
-      message: "Route not found",
-      statusCode: 404
+      message: 'Route not found',
+      statusCode: 404,
     });
   }
 };
